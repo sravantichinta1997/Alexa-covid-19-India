@@ -1,0 +1,192 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "covid india",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloWorldIntent",
+                    "slots": [],
+                    "samples": [
+                        "hey",
+                        "Namaste",
+                        "hola",
+                        "hello",
+                        "how are you",
+                        "say hi world",
+                        "say hi",
+                        "hi",
+                        "say hello world",
+                        "say hello"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "CoronaCasesOne",
+                    "slots": [
+                        {
+                            "name": "states_india",
+                            "type": "AMAZON.Country",
+                            "samples": [
+                                "{states_india}"
+                            ]
+                        },
+                        {
+                            "name": "dateone",
+                            "type": "AMAZON.PhoneNumber",
+                            "samples": [
+                                "{dateone}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "no of cases in {states_india} on {dateone}",
+                        "tell me the number of cases in {states_india} on {dateone}",
+                        "no of cases in {states_india}",
+                        "tell me the number of cases in {states_india}",
+                        "cases in indian states",
+                        "tell me the status of covid cases in {states_india}",
+                        "number of cases in {states_india}",
+                        "give me the status of covid cases in {states_india}",
+                        "tell me the status of corona cases in {states_india}"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "CoronaCasesOne",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "states_india",
+                            "type": "AMAZON.Country",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1042360157565.119321521913"
+                            },
+                            "validations": [
+                                {
+                                    "type": "isInSet",
+                                    "prompt": "Slot.Validation.1042360157565.119321521913.111437261348",
+                                    "values": [
+                                        "Delhi",
+                                        "Bihar",
+                                        "Gujarat",
+                                        "Assam",
+                                        "Madhya Pradesh",
+                                        "Andhra Pradesh",
+                                        "Dadra and Nagar Haveli and Daman and Diu",
+                                        "Jammu and Kashmir",
+                                        "Tamil Nadu",
+                                        "Puducherry",
+                                        "Chhattisgarh",
+                                        "Karnataka",
+                                        "Mizoram",
+                                        "Telanagana",
+                                        "Andaman and Nicobar Islands",
+                                        "Goa",
+                                        "Odisha",
+                                        "Ladakh",
+                                        "West Bengal",
+                                        "Maharashtra",
+                                        "Kerala",
+                                        "Chandigarh",
+                                        "Sikkim",
+                                        "Punjab",
+                                        "Meghalaya",
+                                        "Rajasthan",
+                                        "Uttar Pradesh",
+                                        "Tripura",
+                                        "Jharkhand",
+                                        "Haryana",
+                                        "Uttarakhand",
+                                        "Himachal Pradesh",
+                                        "Arunachal Pradesh",
+                                        "Manipur",
+                                        "Nagaland"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "dateone",
+                            "type": "AMAZON.PhoneNumber",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1372610506411.213661577563"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1042360157565.119321521913",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Could you please tell me the name of the state in India?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1042360157565.119321521913.111437261348",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Could you please tell me the proper spelling of the state in India"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1372610506411.213661577563",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Can you mention the date on which you want to know the cases in the format YYYYMMDD?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1589239967557.1253993173052.171930659842",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Can you specify the name of the country ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1589239967557.1253993173052",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Can you specify the name of the country?"
+                    }
+                ]
+            }
+        ]
+    }
+}
